@@ -1,11 +1,11 @@
 const express = require("express");
-const db = require("../data/db");
+const dbMethods = require("../data/dbMethods");
 
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const getAllDishes = await db("dishes");
+    const getAllDishes = await dbMethods.getAll();
     if (getAllDishes) {
       res.status(200).json(getAllDishes);
     } else {
