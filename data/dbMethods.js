@@ -1,10 +1,10 @@
 const db = require("./dbConfig");
 
 module.exports = {
-  getAll
+  getDishes
 };
 
-function getAll(query = {}) {
+function getDishes(query = {}) {
   let { sortby = "id", sortdir = "asc" } = query;
 
   let dishes = db("dishes").orderBy(sortby, sortdir);

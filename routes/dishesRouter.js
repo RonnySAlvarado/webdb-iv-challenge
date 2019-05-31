@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const getAllDishes = await dbMethods.getAll();
-    if (getAllDishes) {
-      res.status(200).json(getAllDishes);
+    const getDishes = await dbMethods.getDishes();
+    if (getDishes) {
+      res.status(200).json(getDishes);
     } else {
       res
         .status(400)
